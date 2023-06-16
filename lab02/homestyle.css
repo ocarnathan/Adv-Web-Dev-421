@@ -1,15 +1,26 @@
-.main-menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .main-menu li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .main-menu li a {
-    text-decoration: none;
-    color: #000;
-  }
+body {
+  background: rgb(181, 171, 41);
+  width: 700px;
+  margin: auto;
+}
+
+h1 {
+  color: maroon;
+  text-align: center;
+}
+
+p {
+  color: gray;
+  border: 1px solid gray;
+  padding: 10px;
+}
+div {
+  border: 5px solid rgb(36, 0, 128);
+  text-align: center;
+  padding: 5px;
+}
+table, tr, th {
+  border: 1px solid black;
+  width: 800px;
+  height: 100px;
+}

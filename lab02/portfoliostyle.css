@@ -1,15 +1,5 @@
-.main-menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .main-menu li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  .main-menu li a {
-    text-decoration: none;
-    color: #000;
-  }
+body {
+  background: rgb(255, 255, 255);
+  width: 700px;
+  margin: auto;
+}
