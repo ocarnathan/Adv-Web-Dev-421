@@ -1,16 +1,17 @@
 body {
-  background: rgb(181, 171, 41);
+  background-image: url();
+  background: rgb(255, 254, 253);
   width: 700px;
   margin: auto;
 }
 
 h1 {
-  color: maroon;
+  color: rgb(12, 1, 1);
   text-align: center;
 }
 
 p {
-  color: gray;
+  color: rgb(10, 10, 10);
   border: 1px solid gray;
   padding: 10px;
 }

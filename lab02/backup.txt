@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Introduction Main Page</title>
+        <link rel="stylesheet" href="homestyle.css">
+    </head>
+    <body>
+        <iframe src="/Users/obiec/Desktop/Adv-Web-Dev-421/lab02/mainmenu.html" width="90" height="70"></iframe>
+        <h1>Introduction</h1>
+        <p>Hello, my name is Nahtanrac Eibo. Allow me to take a moment to tell you about myself. I am an aspiring personal trainer. 
+        I've been on a personal fitness journey for about 6 years now. Over the years I have learned much about how to improve fitness
+        through various forms of exercise. I've also became very imformed on the subject of nutrition. The time has come for me to share
+        my knowledge. To start my career as a personal trainer I would like to extend an opportunity to 10 motivated individual to partake
+        in a free 6 week online workout program. Why only 10 you ask? A 10 to 1 ratio is a good fit for a very involved training program.
+        I want to ensure that outside of regular workout times I'm available to give extra support to any participant that may need it.
+        Please take a moment to view my Portfolio and Resume. If I seem like a guy worthy of helping you evolve fill out the contact form
+        and I will reach out to you to gather more information. If not, I appreciate you for taking the time to view my website.
+        </p>
+        <embed src="resumeOCC.pdf" alt="resume" width="500" height="600">
+        <ul><!-- Social Media links-->
+            <li><a href="https://www.facebook.com/AllIKnowIsAmbition" target="blank"> Facebook</a></li>
+            <li><a href="https://www.instagram.com/all_i_know_is_ambition/" target="blank"> Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/obie-carnathan-5ba660b9/" target="blank"> LinkedIn</a></li>
+            <li><a href="https://github.com/ocarnathan" target="blank"> GitHub</a></li>
+            <li><a href="/Users/obiec/Desktop/Adv-Web-Dev-421/lab02/porfolio.html" target="blank"> Portfolio</a></li>
+        </ul>
+        <form action="submit-form.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
