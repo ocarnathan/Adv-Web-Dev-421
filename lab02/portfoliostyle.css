@@ -1,5 +1,21 @@
 body {
-  background: rgb(50, 47, 143);
+  background: rgb(147, 149, 225);
   width: 700px;
   margin: auto;
+}
+
+
+p {
+  background-color: white;
+  border: 5px solid black;
+
+}
+iframe {
+  background-color: white;
+}
+a:hover {
+  color: red;
+}
+h3 {
+  color: red;
 }
