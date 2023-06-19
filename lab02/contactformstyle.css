@@ -2,22 +2,26 @@ body {
     background: rgb(147, 149, 225);
     width: 700px;
     margin: auto;
-  }
-  
-  
-  p {
+}
+
+
+p {
     background-color: white;
     border: 5px solid black;
-  }
-  iframe {
+}
+
+iframe {
     background-color: white;
-  }
-  a:hover {
+}
+
+a:hover {
     color: red;
-  }
-  h1 {
+}
+
+h1 {
     text-align: left;
-  }
-  a {
+}
+
+a {
     color: rgb(19, 137, 31);
-  }
+}

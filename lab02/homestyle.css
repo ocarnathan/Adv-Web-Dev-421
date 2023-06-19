@@ -16,19 +16,25 @@ p {
   border: 1px solid gray;
   padding: 10px;
 }
+
 div {
   border: 5px solid rgb(36, 0, 128);
   text-align: center;
   padding: 5px;
 }
-table, tr, th {
+
+table,
+tr,
+th {
   border: 1px solid black;
   width: 800px;
   height: 100px;
 }
+
 a:hover {
   color: red;
 }
+
 iframe {
   background-color: white;
 }

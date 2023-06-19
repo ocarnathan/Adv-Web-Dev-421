@@ -10,15 +10,24 @@ p {
   border: 5px solid black;
 
 }
+
 iframe {
   background-color: white;
 }
+
 a {
   color: rgb(19, 137, 31);
 }
+
 a:hover {
   color: red;
 }
+
 h3 {
   color: red;
+}
+
+.disney {
+  display: flex;
+  justify-content: center;
 }
