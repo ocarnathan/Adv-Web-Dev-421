@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+    <div class="web-background">
+        <div class="calculator">
+            <form>
+                <div class="textbox">
+                    <input type="text" name="textbox" id="textbox">
+                </div>
+                <div>
+                    <input type="button" value="Clear" onclick="textbox.value = '' " class="clear">
+                    <input type="button" value="Delete" onclick="textbox.value = textbox.value.toString().slice(0,-1) " class="delete">
+                </div>
+                <div>
+                    <input type="button" value="sin" onclick="textbox.value += 'sin' " class="symbol">
+                    <input type="button" value="cos" onclick="textbox.value += 'cos' " class="symbol">
+                    <input type="button" value="tan" onclick="textbox.value += 'tan' " class="symbol">
+                    <input type="button" value=" " class="number">
+                </div>
+                <div>
+                    <input type="button" value="sqrt" onclick="textbox.value += 'sqrt' " class="symbol">
+                    <input type="button" value="exp" onclick="textbox.value += '^' " class="symbol">
+                    <input type="button" value=" " class="number">
+                    <input type="button" value=" " class="number">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="textbox.value += '7' " class="number">
+                    <input type="button" value="8" onclick="textbox.value += '8' " class="number">
+                    <input type="button" value="9" onclick="textbox.value += '9' " class="number">
+                    <input type="button" value="÷" onclick="getNum1('divide');" id="divide" class="symbol">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="textbox.value += '4' " class="number">
+                    <input type="button" value="5" onclick="textbox.value += '5' " class="number">
+                    <input type="button" value="6" onclick="textbox.value += '6' " class="number">
+                    <input type="button" value="*" onclick="getNum1('multiply');" id="multiply" class="symbol">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="textbox.value += '1' " class="number">
+                    <input type="button" value="2" onclick="textbox.value += '2' " class="number">
+                    <input type="button" value="3" onclick="textbox.value += '3' " class="number">
+                    <input type="button" value="-" onclick="getNum1('minus');" id="minus" class="symbol">
+                </div>
+                <div>
+                    <input type="button" value="0" onclick="textbox.value += '0' " class="number">
+                    <input type="button" value="." onclick="textbox.value += '.' " class="decimal">
+                    <input type="button" value="+" onclick="getNum1('plus');" id="plus" class="symbol">
+                    <input type="button" value="=" onclick="getNum2();" class="equal">
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var firstNum = null;
+        var secondNum = null;
+        var plus = false;
+        var minus = false;
+        var multiply = false;
+        var divide = false;
+        var regex = /^-?\d*\.?\d*$/;
+
+
+        function getNum1(ID) {
+            switch (ID){
+                case "plus":
+                    plus = true;
+                    break;
+                case "minus":
+                    if (document.getElementById("textbox").value == '') {
+                        document.getElementById("textbox").value = '-';
+                        exit();
+                    }
+                    minus = true;
+                    break;  
+                case "multiply":
+                    multiply = true;
+                    break;
+                case "divide":
+                    divide = true;
+                    break;                  
+            }
+            firstNum = document.getElementById("textbox").value;
+            document.getElementById("textbox").value = '';
+        }
+        function getNum2() {
+            secondNum = document.getElementById("textbox").value;
+            document.getElementById("textbox").value = evaluate(firstNum, secondNum);
+        }
+
+        function evaluate(num1, num2) {
+            if (plus == true && regex.test(num1) == true && regex.test(num2) == true) {
+                reset()
+                return parseFloat(num1) + parseFloat(num2);
+            }
+            if (minus == true && regex.test(num1) == true && regex.test(num2) == true) {
+                reset()
+                return parseFloat(num1) - parseFloat(num2);
+            }
+            if (multiply == true && regex.test(num1) == true && regex.test(num2) == true) {
+                reset()
+                return parseFloat(num1) * parseFloat(num2);
+            }
+            if (divide == true && regex.test(num1) == true && regex.test(num2) == true) {
+                reset()
+                return parseFloat(num1) / parseFloat(num2);
+            }
+            else return 'invalid input'
+        }
+        function reset(){
+            plus = false;
+            minus = false;
+            multiply = false;
+            divide = false;
+        }
+
+    </script>
+
+    </body>
+</html>
+<!-- REFERENCES -->
+<!-- https://www.youtube.com/watch?v=cGgLHJGyS34 Formatting inspiration taken from this video-->
+<!-- I also used chatGPT to get my regex -->
