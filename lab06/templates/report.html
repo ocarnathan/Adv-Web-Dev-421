@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <h3> Let's see if your password meets all requirements...</h3>
+    <p id="outputText"></p>
+    <script type="text/javascript">
+        var regexCapLetter = /[A-Z]/;
+        var regexLowLetter = /[a-z]/;
+        var regexEndNumber = /[0-9]$/;
+        var lengthMessage, capMessage, lowMessage, endNumMessage;
+        var outputMessage = "";
+        var passCounter = 0;
+
+        function validatePassword(pwd)
+        {
+            if (pwd.length > 7) {
+                // lengthMessage = "Password length is acceptable.";
+                passCounter++;
+            } else {
+                lengthMessage = "Password is too short!";
+            }
+            if (regexCapLetter.test(pwd)){
+                // capMessage = "Password has an uppercase letter.";
+                passCounter++;
+            } else {
+                capMessage = "You did not use an uppercase character.";
+            }
+            if (regexLowLetter.test(pwd)){
+                // lowMessage = "Password has a lowercase letter.";
+                passCounter++;
+            } else {
+                lowMessage = "You did not use a lowercase character.";
+            }
+            if (regexEndNumber.test(pwd)){
+                // endNumMessage = "Password ends in a number.";
+                passCounter++;
+            } else {
+                endNumMessage = "You did not end your password with a number.";
+            }
+            if (passCounter === 4){
+                outputMessage = "Your password meets all requirements!";
+            } else{
+                outputMessage += "Oh no! Looks like you had issues with your password! <br><br>" + "Here are the requirements you failed: <br><br>";
+                if (lengthMessage) {
+                    outputMessage += "\n\u2022 " + lengthMessage + "<br>";
+                }
+                if (capMessage) {
+                    outputMessage += "\n\u2022 " + capMessage + "<br>";
+                }
+                if (lowMessage) {
+                    outputMessage += "\n\u2022 " + lowMessage + "<br>";
+                }
+                if (endNumMessage) {
+                    outputMessage += "\n\u2022 " + endNumMessage + "<br>";
+                }
+            }
+            document.getElementById("outputText").innerHTML = outputMessage;//Sets outputText paragpragh equal to the result
+        }
+        validatePassword("{{Password}}");
+    </script>
+</div>
+{% endblock %} 

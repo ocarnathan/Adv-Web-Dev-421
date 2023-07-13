@@ -1,10 +1,23 @@
-{% extends "base2.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <div class="jumbotron">
-    <p> Welcome to our company page</p>
-    <p> Do you want to be a member?</p>
-    <a href="{{url_for('signup_form')}}"> Sign up here</a>
+    <p> Welcome to Password Check</p>
+    <p> Let's see if your Password is secure!</p>
+    <p> Fill out the form below with a User Name and password that has these restraints</p>
+    <p> <ul>
+        <li>Must have an upper case letter somewhere.</li>
+        <li>Must have a lower case letter somewhere.</li>
+        <li> Must have a number at the end.</li>
+        <li> Password should be at least 8 characters</li>
+    </ul></p>
+    <form action="{{url_for('report')}}">
+        <label for="UserName"> UserName:</label>
+        <input type="text" name="UserName" required>
+        <label for="Password"> Password:</label>
+        <input type="text" name="Password" required>
+        <input type="submit" value="Submit Form">
+    </form>
 </div>
 
 {% endblock %}
