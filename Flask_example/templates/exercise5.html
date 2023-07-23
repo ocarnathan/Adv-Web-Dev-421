@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Exercise 2 </h1>
+        <h2>My name is {{my_name}}</h2>
+        <h2>{{characters}}</h2>
+        <ul>
+            {% for day in week%}
+                {% if day == "Sunday" or day == "Saturday" %}
+                    <li> <b>{{day}}</b></li>
+                {% else %}
+                    <li> {{day}}</li>
+                {% endif %}
+            {% endfor %}
+            <!-- Remember to close loops, if statements etc. -->
+        </ul>
+    </body>
+</html>
