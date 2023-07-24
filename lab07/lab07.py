@@ -130,15 +130,6 @@ def thankyou():
 @app.route('/error404')
 def error404():
     return render_template ('error404.html')
-# @app.route('/report')
-# def report():
-#     UserName = request.args.get('UserName')
-#     Password = request.args.get('Password')
-#     return render_template('report.html' ,UserName=UserName,Password=Password)
-
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     return render_template('404.html'),404
 
 if __name__ == '__main__':
     app.run()
