@@ -21,6 +21,7 @@
             <br>
             {{form.submit()}}
         </form>
+        <p>Password must be at least 8 characters, include at least one uppercase and lowercase letter, and end in a number.</p>
         <a href="{{url_for('index')}}">Log in</a>
         {% if error %}
         <p>{{ error }}</p>
