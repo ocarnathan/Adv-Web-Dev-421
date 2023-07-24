@@ -132,7 +132,7 @@ def error404():
     return render_template ('error404.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 #home page or domain is locally represented as http://127.0.0.1:5000/
 # to create multiple pages we will use decorators;
